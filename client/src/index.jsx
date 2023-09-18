@@ -1,10 +1,13 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
+import MessageForm from './MessageForm.jsx';
+
 const App = () => {
   return (
-    <div>
-      Hello world
+    <div id="main-container">
+      <h1>Chitter Chatter</h1>
+      <MessageForm />
     </div>
   )
 }
