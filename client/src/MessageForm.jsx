@@ -1,10 +1,6 @@
 import React, { useRef } from "react";
-import { io } from 'socket.io-client';
 
-
-const socket = io('http://localhost:3000');
-
-const MessageForm = () => {
+const MessageForm = ({socket}) => {
   const messageElement = useRef();
 
   const handleSend = (e) => {
@@ -14,7 +10,7 @@ const MessageForm = () => {
       alert('Please input a message');
       return;
     }
-    console.log();
+    socket.emit('message', message);
   }
 
   return (
